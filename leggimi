@@ -1,0 +1,45 @@
+Hello from Docker!
+
+Autore: Lorenzo Bassi
+
+ID: stazione-meteo-lorenzobassi
+-------------------------------------------------------------
+
+La installazione del container e' riuscita con successo...
+
+-------------------------------------------------------------
+
+Per avviare la applicazione seguire i seguenti passaggi: 
+
+1. Collega il sensore DHT11 al raspberry
+
+
+2. Apri due terminali
+
+
+3. Nel primo terminale copia ed incolla il seguente comando:
+   sudo docker run --privileged --net=host --name stazionemeteo -it stazione-meteo-lorenzobassi bash
+
+
+4. Nel secondo terminale copia ed incolla il seguente comando:
+   sudo docker exec -it stazionemeteo bash
+
+
+5. In uno dei due terminali digita il comando: npm start
+
+
+6. Nel secondo terminale digita il comando: python measure.py
+
+
+7. Se vedi le misurazioni apparire sul terminale vuole dire che la tutto funziona correttamente
+
+
+8. Accedendo al sito localhost:8080 e' possibile visionare in tempo reale le misurazioni
+
+
+
+HELP
+Per vedere se il sensore è stato correttamente collegato digita il comando:
+python AdafruitDHT.py 11 4
+
+Nel caso in cui il collegamento risulti corretto dovrebbe apparire a schermo la misurazione della temperatura ed umidita'
